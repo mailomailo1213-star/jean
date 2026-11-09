@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GAULTIER — The Fragrance Collection</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+
+    <a href="#" class="logo" onclick="showHome()">
+        GAULTIER<span>.</span>
+    </a>
+
+    <nav>
+        <a href="#" onclick="showHome()">HOME</a>
+        <a href="#collection" onclick="showHome()">COLLECTION</a>
+        <a href="#about" onclick="showHome()">ABOUT</a>
+    </nav>
+
+    <div class="nav-right">
+        TBILISI, GEORGIA
+    </div>
+
+</header>
+
+
+<!-- MAIN PAGE -->
+
+<main id="homePage">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                THE WORLD OF JEAN PAUL GAULTIER
+            </p>
+
+            <h1>
+                SCENT IS<br>
+                <i>IDENTITY.</i>
+            </h1>
+
+            <p class="hero-description">
+                Discover a world where fragrance meets art,
+                individuality and unforgettable design.
+            </p>
+
+            <button class="gold-button"
+                onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">
+
+                EXPLORE COLLECTION
+
+            </button>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <div class="hero-circle"></div>
+
+            <img
+                src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=900"
+                alt="Luxury fragrance">
+
+            <span class="hero-number">
+                01 / GAULTIER
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro" id="about">
+
+        <p class="eyebrow">
+            BE DIFFERENT. BE YOURSELF.
+        </p>
+
+        <h2>
+            NOT JUST A FRAGRANCE.<br>
+            <i>A STATEMENT.</i>
+        </h2>
+
+        <p>
+            Explore the iconic creations of Jean Paul Gaultier,
+            from the legendary Le Male collection to Classique,
+            Le Beau, Scandal and Gaultier Divine.
+        </p>
+
+    </section>
+
+
+    <!-- COLLECTION -->
+
+    <section class="collection" id="collection">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="eyebrow">
+                    FIND YOUR SIGNATURE
+                </p>
+
+                <h2>
+                    THE COLLECTION
+                </h2>
+
+            </div>
+
+            <span id="productCount">
+                40 PRODUCTS
+            </span>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTERS -->
+
+        <div class="filters">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search fragrances..."
+                oninput="renderProducts()">
+
+            <div class="filter-buttons">
+
+                <button
+                    class="filter active"
+                    onclick="setFilter('all',this)">
+                    ALL
+                </button>
+
+                <button
+                    class="filter"
+                    onclick="setFilter('men',this)">
+                    MEN
+                </button>
+
+                <button
+                    class="filter"
+                    onclick="setFilter('women',this)">
+                    WOMEN
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- COLLECTION PRODUCTS -->
+
+        <div class="product-grid" id="productGrid">
+
+        </div>
+
+    </section>
+
+
+    <!-- DELIVERY SECTION -->
+
+    <section class="shipping-banner">
+
+        <p class="eyebrow">
+            DELIVERING TO GEORGIA
+        </p>
+
+        <h2>
+            YOUR NEXT SIGNATURE<br>
+            <i>IS JUST A DELIVERY AWAY.</i>
+        </h2>
+
+        <p>
+            Explore our collection and discover your next fragrance.
+        </p>
+
+
+        <div class="shipping-features">
+
+            <div>
+                <span>01</span>
+                <p>FRAGRANCE COLLECTION</p>
+            </div>
+
+            <div>
+                <span>02</span>
+                <p>TBILISI DELIVERY ESTIMATES</p>
+            </div>
+
+            <div>
+                <span>03</span>
+                <p>GEORGIAN LARI PRICES</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            GAULTIER.
+        </div>
+
+        <p>
+            THE WORLD OF JEAN PAUL GAULTIER
+        </p>
+
+        <p>
+            AN UNOFFICIAL FRAGRANCE SHOWCASE
+        </p>
+
+        <div class="designer-credit">
+
+            DESIGNED & DEVELOPED BY
+
+            <span>
+                SABA CHARGAZIA
+            </span>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 GAULTIER SHOWCASE. ALL RIGHTS RESERVED.
+        </p>
+
+    </footer>
+
+</main>
+
+
+<!-- PRODUCT DETAIL PAGE -->
+
+<main id="detailPage" class="hidden">
+
+    <button class="back-button" onclick="showHome()">
+        ← BACK TO COLLECTION
+    </button>
+
+
+    <section class="detail-layout">
+
+
+        <!-- PRODUCT IMAGE -->
+
+        <div class="detail-image">
+
+            <img
+                id="detailImg"
+                src=""
+                alt="Perfume">
+
+            <span class="image-label">
+                GAULTIER COLLECTION
+            </span>
+
+        </div>
+
+
+        <!-- PRODUCT INFORMATION -->
+
+        <div class="detail-info">
+
+            <p class="eyebrow" id="detailCategory">
+                COLLECTION
+            </p>
+
+            <h1 id="detailName">
+                PRODUCT NAME
+            </h1>
+
+            <p class="detail-type" id="detailType">
+                Eau de Parfum
+            </p>
+
+            <div class="detail-price" id="detailPrice">
+                PRICE ON REQUEST
+            </div>
+
+            <p class="detail-description" id="detailDescription">
+                Product description.
+            </p>
+
+
+            <div class="detail-divider"></div>
+
+
+            <!-- PRODUCT SPECIFICATIONS -->
+
+            <div class="detail-row">
+
+                <span>SIZE</span>
+
+                <strong id="detailSize">
+                    100 ml
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>FRAGRANCE FAMILY</span>
+
+                <strong id="detailFamily">
+                    Woody
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>COUNTRY OF ORIGIN</span>
+
+                <strong>
+                    FRANCE
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>BRAND</span>
+
+                <strong>
+                    JEAN PAUL GAULTIER
+                </strong>
+
+            </div>
+
+
+            <div class="detail-divider"></div>
+
+
+            <!-- DELIVERY -->
+
+            <div class="delivery-box">
+
+                <p class="eyebrow">
+                    DELIVERY INFORMATION
+                </p>
+
+                <h3>
+                    TBILISI, GEORGIA
+                </h3>
+
+                <p>
+                    Estimated delivery:
+                    <strong>Check with seller</strong>
+                </p>
+
+                <p>
+                    Shipping cost:
+                    <strong>Check with seller</strong>
+                </p>
+
+                <p class="small-note">
+                    Delivery times and costs depend on the retailer,
+                    product availability and destination address.
+                </p>
+
+            </div>
+
+
+            <button
+                class="gold-button order-button"
+                onclick="contactSeller()">
+
+                CONTACT SELLER
+
+            </button>
+
+
+            <p class="small-note">
+                This is a demonstration store.
+                No payment or order is processed here.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
